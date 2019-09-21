@@ -19,8 +19,8 @@ class Application
         resp.write "#{shopped}\n"
       end
     elsif req.path.match(/add/)
-      add_term = req.params["q"]
-      resp.write handle_search(add_term)
+      search_term = req.params["q"]
+      resp.write add_to_cart(search_term)
     else
       resp.write "Path Not Found"
     end
@@ -37,5 +37,11 @@ class Application
   end
   
   def add_to_cart(search_term)
+    if @@cart.include?(search_term)
+      return "Already in cart"
+    else 
+      @@cart << search_term 
+      return "put in the cart"
+    end
   end
 end
