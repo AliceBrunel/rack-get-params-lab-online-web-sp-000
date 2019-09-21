@@ -41,7 +41,7 @@ class Application
       return "Already in cart"
     else 
       @@cart << search_term 
-      return "put in the cart"
+      return "Couldn't find. Put in the cart"
     end
   end
 end
