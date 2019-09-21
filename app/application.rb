@@ -18,6 +18,7 @@ class Application
       if @@cart.include?
       @@cart.each do |shopped|
         resp.write "#{shopped}\n"
+      end
       else 
         "Your cart is empty is empty."
       end
