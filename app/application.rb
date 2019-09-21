@@ -19,8 +19,8 @@ class Application
         resp.write "#{shopped}\n"
       end
     elsif req.path.match(/add/)
-      search_term = req.params["q"]
-      resp.write handle_search(search_term)
+      add_term = req.params["q"]
+      resp.write handle_search(add_term)
     else
       resp.write "Path Not Found"
     end
